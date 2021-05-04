@@ -13,7 +13,13 @@ client.on('message', message => {
 	    message.channel.send('Pong.');
     //Help
 	} else if (message.content === `${prefix} help`) {
-	    message.channel.send('Here are the commands noob \n prefix: jakobe \n {prefix} ping: Pong \n {prefix} joke: good joke \n {prefix} kewl: compliment jakobebot \n {prefix} help: display this help \n jakobe participates in conversations too which is pretty kewl')
+	    message.channel.send('Here are the commands noob \n prefix: jakobe \n {prefix} ping: Pong \n {prefix} joke: good joke \n {prefix} kewl: compliment jakobebot \n {prefix} version: prints current version \n {prefix} src: view source code \n {prefix} help: display this help \n jakobe participates in conversations too which is pretty kewl')
+    //Version
+	} else if (message.content === `${prefix} version`) {
+	    message.channel.send('v1');
+    //Src
+	} else if (message.content === `${prefix} src`) {
+	    message.channel.send('https://github.com/JacobeZhang/JakobeBot');
     //Joke
 	} else if (message.content === `${prefix} joke`) {
             message.channel.send('you');

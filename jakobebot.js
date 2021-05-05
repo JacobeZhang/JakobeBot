@@ -16,7 +16,7 @@ client.on('message', message => {
 	    message.channel.send('Here are the commands noob \n prefix: jakobe \n {prefix} ping: Pong \n {prefix} joke: good joke \n {prefix} kewl: compliment jakobebot \n {prefix} version: prints current version \n {prefix} src: view source code \n {prefix} help: display this help \n jakobe participates in conversations too which is pretty kewl')
     //Version
 	} else if (message.content === `${prefix} version`) {
-	    message.channel.send('v1');
+	    message.channel.send('v1.1');
     //Src
 	} else if (message.content === `${prefix} src`) {
 	    message.channel.send('https://github.com/JacobeZhang/JakobeBot');
@@ -51,6 +51,9 @@ client.on('message', message => {
     //No u
 	} else if (message.content === `no u`) {
 	    message.channel.send('no u');
+    //rip
+	} else if (message.content.startsWith(`rip`)) {
+	    message.channel.send('rip');
 	}
 });
 

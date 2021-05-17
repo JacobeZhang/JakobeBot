@@ -1,4 +1,10 @@
 const { prefix, token } = require('./config.json');
+const quiz = require('./quiz.json');
+const item = quiz[Math.floor(Math.random() * quiz.length)];
+const filter = response => {
+    return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+};
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
 client.once('ready', () => {
@@ -13,10 +19,10 @@ client.on('message', message => {
 	    message.channel.send('Pong.');
     //Help
 	} else if (message.content === `${prefix} help`) {
-	    message.channel.send('Here are the commands noob \n prefix: jakobe \n {prefix} ping: Pong \n {prefix} joke: good joke \n {prefix} kewl: compliment jakobebot \n {prefix} version: prints current version \n {prefix} src: view source code \n {prefix} help: display this help \n jakobe participates in conversations too which is pretty kewl')
+	    message.channel.send('Here are the commands noob \n prefix: jakobe \n {prefix} ping: Pong \n {prefix} joke: good joke \n {prefix} kewl: compliment jakobebot \n {prefix} version: prints current version \n {prefix} src: view source code \n (NEW) {prefix} ornith: ornithology quiz \n {prefix} help: display this help \n jakobe participates in conversations too which is pretty kewl')
     //Version
 	} else if (message.content === `${prefix} version`) {
-	    message.channel.send('v1.1');
+	    message.channel.send('v1.2');
     //Src
 	} else if (message.content === `${prefix} src`) {
 	    message.channel.send('https://github.com/JacobeZhang/JakobeBot');
@@ -45,7 +51,7 @@ client.on('message', message => {
 	    message.channel.send('thanks');
     //Lol
 	} else if (message.content === `lol` || message.content === `Lol` || message.content === `LOL`){
-	    const lol = ["kek", "haha", "funni", "l o l"]
+	    const lol = ["kek", "haha", "funni", "lol"]
 	    const randomLol = lol[Math.floor(Math.random() * lol.length)];
 	    message.channel.send(randomLol);
     //No u
@@ -54,6 +60,20 @@ client.on('message', message => {
     //rip
 	} else if (message.content.startsWith(`rip`)) {
 	    message.channel.send('rip');
+    //ornith
+	} else if (message.content === `${prefix}`) {
+	    message.channel.send('yo');
+	} else if (message.content === `${prefix} ornith`) {
+	    message.channel.send('wot is dis bird');
+	    message.channel.send(item.question).then(() => {
+		message.channel.awaitMessages(filter, { max: 1, time: 30000, errors: ['time'] })
+		    .then(collected => {
+			message.channel.send(`${collected.first().author} got the correct answer!`);
+		    })
+		    .catch(collected => {
+			message.channel.send('Looks like nobody got the answer this time.');
+		    });
+	    });
 	}
 });
 

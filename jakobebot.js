@@ -66,18 +66,13 @@ client.on('message', message => {
 	    message.channel.send('(EXPERIMENTAL) ALL QUESTIONS FROM QUIZDB https://quizdb.org');
 	    const item = quiz[Math.floor(Math.random() * quiz.length)];
 	    message.channel.send(item.text);
-	    message.channel.send(`||` + item.answer + `||`);
-//	    .then(() => {
-//		message.channel.awaitMessages(filter, { max: 1, time: 30000, errors: ['time'] })
-//		    .then(collected => {
-//			message.channel.send(`${collected.first().author} got the correct answer!`);
-//		    })
-//		    .catch(collected => {
-//			message.channel.send('Looks like nobody got the answer this time.');
-//		    });
-//	    });
+	    message.channel.send('Type your guess and then type "answer" to reveal the answer');
+	    const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 100000, max:26});
+	    collector.on('collect', message => {
+		if (message.content === `answer`) {
+                    message.channel.send(item.answer);
+		}
+	    })
 	}
-});
-
+})
 client.login(token);
-

@@ -66,12 +66,10 @@ client.on('message', message => {
 	    message.channel.send('(EXPERIMENTAL) ALL QUESTIONS FROM QUIZDB https://quizdb.org');
 	    const item = quiz[Math.floor(Math.random() * quiz.length)];
 	    message.channel.send(item.text);
-	    message.channel.send('Type your guess and then type "answer" to reveal the answer');
-	    const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 100000, max:26});
+	    message.channel.send('Type your guess here');
+	    const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 100000, max:1});
 	    collector.on('collect', message => {
-		if (message.content === `answer`) {
-                    message.channel.send(item.answer);
-		}
+		message.channel.send(item.answer);
 	    })
 	}
 })

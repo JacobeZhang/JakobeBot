@@ -62,6 +62,8 @@ client.on('message', message => {
     //history
 	} else if (message.content === `${prefix}`) {
 	    message.channel.send('yo');
+	} else if (message.content === `${prefix} homework`) {
+	    message.channel.send('heres all the humanities hw dumbo \n UPDATED: 9/24/2021 \n **SOCIAL STUDIES:** \n Ch 1+2 and Quiz (due Tuesday) \n Essential Question #4 (and the others if you didnt do em yet) (all due at end of quarter) \n Gilgamesh RECIPES Chart (10/4) \n **ENGLISH:** \n lit quiz 9/29 (Wednesday) \n **ART:** \n Lascaux Caves (due Friday)');
 	} else if (message.content === `${prefix} history`) {
 	    message.channel.send('(EXPERIMENTAL) ALL QUESTIONS FROM QUIZDB https://quizdb.org');
 	    const item = quiz[Math.floor(Math.random() * quiz.length)];

@@ -59,13 +59,15 @@ client.on('message', message => {
     //rip
 	} else if (message.content.startsWith(`rip`)) {
 	    message.channel.send('rip');
-    //history
+    //Ayo
 	} else if (message.content === `${prefix}`) {
 	    message.channel.send('yo');
+    //Homework	
 	} else if (message.content === `${prefix} homework`) {
-	    message.channel.send('heres all the humanities hw dumbo \n UPDATED: 9/24/2021 \n **SOCIAL STUDIES:** \n Ch 1+2 and Quiz (due Tuesday) \n Essential Question #4 (and the others if you didnt do em yet) (all due at end of quarter) \n Gilgamesh RECIPES Chart (10/4) \n **ENGLISH:** \n lit quiz 9/29 (Wednesday) \n **ART:** \n Lascaux Caves (due Friday)');
+	    message.channel.send('(**HOMEWORK FOR BLUE ROLE ONLY**) heres all the humanities hw dumbo \n UPDATED: 10/7/2021 \n **SOCIAL STUDIES:** \n Ch 3 AND 18 (10/25) \n Essential Questions 1-6 (all due at end of quarter) \n Africa/Americas RECIPES Chart (10/12) \n **ENGLISH:** \n Hebrew Lit Quiz 10/20 \n Vocab pp 27-28 due 10/20 \n **THEATRE:** \n discussion stuff??? \n **ART** \n Art of Ancient N.E. / Mesopotamia (10/12)');
+    //History Quiz
 	} else if (message.content === `${prefix} history`) {
-	    message.channel.send('(EXPERIMENTAL) ALL QUESTIONS FROM QUIZDB https://quizdb.org');
+	    mes:rlsage.channel.send('(EXPERIMENTAL) ALL QUESTIONS FROM QUIZDB https://quizdb.org');
 	    const item = quiz[Math.floor(Math.random() * quiz.length)];
 	    message.channel.send(item.text);
 	    message.channel.send('Type your guess here');

@@ -64,7 +64,7 @@ client.on('message', message => {
 	    message.channel.send('yo');
     //Homework	
 	} else if (message.content === `${prefix} homework`) {
-	    message.channel.send('(**HOMEWORK FOR BLUE ROLE ONLY**) heres all the humanities hw dumbo \n UPDATED: 10/7/2021 \n **SOCIAL STUDIES:** \n Ch 3 AND 18 (10/25) \n Essential Questions 1-6 (all due at end of quarter) \n Africa/Americas RECIPES Chart (10/12) \n **ENGLISH:** \n Hebrew Lit Quiz 10/20 \n Vocab pp 27-28 due 10/20 \n **THEATRE:** \n discussion stuff??? \n **ART** \n Art of Ancient N.E. / Mesopotamia (10/12)');
+	    message.channel.send('(**HOMEWORK FOR BLUE ROLE ONLY**) heres all the humanities hw dumbo \n UPDATED: 10/11/2021 \n **SOCIAL STUDIES:** \n Ch 3 AND 18 (10/25) \n Essential Questions 1-6 (all due at end of quarter) \n Africa/Americas RECIPES Chart (10/12) \n Africa/Americas EQ \n Presentations begin 10/19 \n **ENGLISH:** \n Hebrew Lit Quiz 10/20 \n Vocab pp 27-28 due 10/20 \n **THEATRE:** \n discussion stuff??? \n **ART** \n Art of Ancient N.E. / Mesopotamia (10/12)');
     //History Quiz
 	} else if (message.content === `${prefix} history`) {
 	    mes:rlsage.channel.send('(EXPERIMENTAL) ALL QUESTIONS FROM QUIZDB https://quizdb.org');
